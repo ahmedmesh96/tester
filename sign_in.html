@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservstion</title>
+    <meta name="title" content="Konya Restaurant">
+    <meta name="description" content="This is a Restaurant Website made by Ahmed Almashhadani">
+
+    <!-- 
+    - flatpickr
+  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  
+    <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./assets/css/singin_style.css">
+</head>
+
+<body>
+  
+    <div class="container">
+      
+        <h1 id="currenttime"></h1>
+     
+        <form action="" id="contactForm">
+
+
+          
+
+            
+
+
+            <div class="alert">Your message sent</div>
+            
+
+           
+
+            <div class="inputBox">
+              <input type="text"  id="name" placeholder="Your name...." />
+          </div>
+            <div class="inputBox">
+              <input type="text" id="phoneNumber" placeholder="Your Phone Number...." />
+          </div>
+
+            <div class="inputBox">
+                <input type="email" id="emailid" placeholder="Your Email....." />
+            </div>
+
+            <div class="inputBox">
+              <input type="text" id="occasion" placeholder="occasion....." />
+          </div>
+
+            <div class="inputBox">
+              <input type="number" id="countGuests" placeholder="Your Guests...."  min="1" max="100"/>
+          </div>
+
+          <div class="inputBox">
+            <input type="datetime-local" id="datetime" placeholder="Select Date...." />
+        </div>
+
+
+
+
+
+
+
+
+            
+
+
+
+            <div class="inputBox">
+                <textarea id="msgContent" cols="30" rows="10" placeholder="Message"></textarea>
+            </div>
+
+            <div class="inputBox">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js"></script>
+    <script src="./assets/js/mail.js"></script>
+    <!--  flatpicker -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      config = {
+        enableTime:true,
+        dateFormat: "Y-m-d H:i",
+        altInput: true,
+        altFormat: "F, j, Y (h:S K)", 
+      }
+      flatpickr("input[type=datetime-local]", config);
+    </script>
+    <script>
+      let time = document.getElementById("currenttime");
+      let d = new Date();
+      time.innerHTML = d.toLocaleDateString();
+    </script>
+    
+</body>
+
+</html>
+
+
+
+
